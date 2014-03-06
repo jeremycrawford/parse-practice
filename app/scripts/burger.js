@@ -1,5 +1,5 @@
-var Burger = Parse.Object.extend("Burger")
+var Name = Parse.Object.extend("Doctor")
  
-var BurgersCollection = Parse.Collection.extend({
-  model: Burger
-})
+var NamesCollection = Parse.Collection.extend({
+  model: Name
+});
