@@ -10,42 +10,28 @@ $(function(){
  
   $('.save-button').click(function(){
 
+    var user = new Parse.User();
 
-    var name = new Name();
+    var firstName = $('.js-name').val()
+    var email = $('.js-email').val()
+    var password = $('.js-password').val()
 
-    name.save({
-      name: $('.js-name').val(),
-      email: $('.js-email').val()
+    user.set("username", firstName);
+    user.set("email", email);
+    user.set("password", password);
+
+    user.signUp(null, {
+      success: function(user) {
+  
+      },
+      error: function(user, error) {
+        alert("Error: " + error.code + " " + error.message);
+      }
     });
 
-    $('.js-name').val(),
-    $('.js-email').val()
   }); 
 
-
+});
 
 
     
-})
-  // name.set("name", $('.js-name'))
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // var pizzaBurger = new Burger;
-  // pizzaBurger.set('breadType', 'soggyish')
-  // pizzaBurger.save({name: 'Pizza Burger'})
-
-  // var TestObject = Parse.Object.extend("TestObject");
-  // var testObject = new TestObject();
-  // testObject.save({foo: "bar"}).then(function(object) {
-  //   alert("This is working!");
